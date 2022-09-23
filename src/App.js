@@ -1,10 +1,21 @@
 // import logo from './logo.svg';
+import './componentes/productos' ;
 import './App.css';
 import NavBar from  './componentes/navBar';
 import './componentes/style.css';
+import Items from './componentes/productos';
 function App() {
   return (
-       <NavBar  />
+       <div>
+          <NavBar  />
+          <ul className='itemsul'>
+            <Items  />
+            <Items  />
+            <Items  />
+          </ul>
+          
+        
+       </div>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
