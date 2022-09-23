@@ -1,0 +1,17 @@
+.navBar {
+    display: flex;
+    position: relative;
+}
+.bar {
+    display: inline-block ;
+    margin-inline: 40px;
+    text-align: center;
+    
+}
+.nav {
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    
+}

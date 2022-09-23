@@ -1,15 +1,17 @@
+// import rutaJardinLogo from '../componentes/rutaJardinLogo' ;
 function NavBar(){
     return <nav className="navBar" >
-        <a href="">Ruta Jardin</a>
+        <div><img src="../componentes/rutaJardinLogo" alt="" /></div>
+        <a className="nav" href="">Ruta Jardin</a>
         <ul>
-            <li>
-                <a href="">Cafe de Especialidad</a>
+            <li className="bar">
+                <a className="nav" href="">Cafe de Especialidad</a>
             </li>
-            <li>
-                <a href="">Cosas dulces</a>
+            <li className="bar">
+                <a className="nav" href="">Cosas dulces</a>
             </li>
-            <li>
-                <a href="">Cosas saladas</a>
+            <li className="bar">
+                <a className="nav" href="">Cosas saladas</a>
             </li>
         </ul>
     </nav>
