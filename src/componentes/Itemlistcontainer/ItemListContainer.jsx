@@ -1,16 +1,30 @@
-import FlexWrapper from "../../flexwrapper/flexwrapper"
-import Cards from "../Itemsdetails/Cards"
+
+import React, {useState, useEffect} from "react";
+import Itemlist from "./itemlist";
 
 export default function ItemsListConten(props){
+    
+    const [items , setItems] = useState ([])
+    useEffect(
+      () => {
+        fetch("https://my-json-server.typicode.com/adriandileo/items/db")
+        .then((response) => {return response.json()} )
+        .then((json)=> { setItems(json.salty)})
+      },[]
+    );
+    useEffect(
+        () => {
+          fetch("https://my-json-server.typicode.com/adriandileo/items/db")
+          .then((response) => {return response.json()} )
+          .then((json)=> { setItems(json.cafe)})
+        },[]
+      )
+
+    
     return(
         <>
         <div>
-            <FlexWrapper>
-                <div>
-                <Cards title="Gato" detail = "Meow" precio="200" taste="salty" />
-                <Cards title= "Perro" detail="Guau" precio="250" taste="sweet"></Cards>
-                </div>
-            </FlexWrapper>  
+            <Itemlist items={items} />
         </div>
         </>
     )

@@ -1,4 +1,4 @@
-import React , {useStatus , useEfect} from 'react';
+// import React , {useState , useEffect} from 'react';
 import './App.css';
 import NavBar from  './componentes/navBar';
 import './componentes/style.css';
@@ -8,14 +8,9 @@ import Home from "./pages/home" ;
 import Salty from "./pages/salty" ;
 import Sweet from "./pages/sweet" ;
 import Cafe from "./pages/cafe" ;
-
+// import getItems from './componentes/Items/items';
 
 function App() {
-  useEfect(
-    fetch("https://github.com/adriandileo/java/blob/main/db.json").then(
-      (respuesta) => { console.log(respuesta)}
-    )
-  )
 
   return (
        <div>
@@ -28,9 +23,9 @@ function App() {
               <Route exact path = "/salty" element={<Salty/>} />
               <Route exact path = "/Cartwidget" element={<Salty/>} />
               <Route exact path = "/cafe/ :cafeId" element={<Cafe/>} />
+
             </ Routes>
           </BrowserRouter>
-
         
         
        </div>
