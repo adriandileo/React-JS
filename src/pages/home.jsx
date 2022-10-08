@@ -1,7 +1,12 @@
+import ItemsListContainer from '../componentes/Itemlistcontainer/ItemListContainer';
+
 export default function Home(){
     return (
         <div>
             <h1>Home </h1>
-        </div>
+        <ul className='itemsul'>
+            <ItemsListContainer  />
+            </ul>
+        </div> 
     )
 }

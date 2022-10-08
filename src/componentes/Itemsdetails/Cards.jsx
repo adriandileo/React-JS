@@ -1,6 +1,6 @@
 
 export default function Cards(props){
-    console.log (props)
+     console.log (props)
 
     return(
     
