@@ -19,7 +19,7 @@ export default function Salty(){
             <div>
             {
             items.map((item) => {
-              return <div>
+              return <div key={item.id}>
                 <h3> {item.name}</h3>
                 <a href={item.details}>ver detalle</a>
               </div>

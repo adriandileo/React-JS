@@ -1,6 +1,7 @@
-
+import { Link } from "react-router-dom";
+import Button from "./button";
 export default function Cards(props){
-     console.log (props)
+
 
     return(
     
@@ -13,6 +14,11 @@ export default function Cards(props){
             <p>{props.detail}</p>
             <h4>{props.precio} </h4>
         </div>
+        <Link to={`/${props.id} `}>
+            <Button>
+            {`Compra ${props.title}`}
+            </Button>
+        </Link>
     </div>
     )
 

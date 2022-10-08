@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 
 export default function Cafe(){
-    const [items , setItems] = useState ([1])
+    const [items , setItems] = useState ([])
     useEffect(
       () => {
         fetch("https://my-json-server.typicode.com/adriandileo/items/db")
@@ -15,7 +15,8 @@ export default function Cafe(){
             <div>
           {
             items.map((item) => {
-              return <div>
+              return <div key={item.id}>
+                
                 <h3> {item.name}</h3>
                 <a href={item.details}>ver detalle</a>
               </div>
