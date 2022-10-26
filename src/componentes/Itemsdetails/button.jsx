@@ -3,7 +3,7 @@ export default function Button(props){
     return(
         <div>
             <button>
-            {props.title}
+            {`Comprar  ${props.title}`}
             </button>
         </div>
     )

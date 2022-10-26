@@ -8,13 +8,13 @@ function NavBar(){
             <Link to={"/"} className="nav"> Ruta Jardin</Link>
         <ul>
             <li className="bar">
-                <Link to={"/cafe"} className="nav"> Cafe de Especialidad</Link>
+                <Link to={"/category/cafe"} className="nav"> Cafe de Especialidad</Link>
             </li>
             <li className="bar">
-                <Link to={"/sweet"} className="nav"> Cosas Dulces</Link>
+                <Link to={"/category/sweet"} className="nav"> Cosas Dulces</Link>
             </li>
             <li className="bar">
-                <Link to={"/salty"} className="nav"> Cosas Saladas</Link>
+                <Link to={"/category/salty"} className="nav"> Cosas Saladas</Link>
             </li>
             <li className="bar">
                 <Link to={"/Cartwidget"} className="nav"> <CartWidget></CartWidget></Link>

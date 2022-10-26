@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import Button from "./button";
+import Button from "./button"
+
+                    //      CONTENEDOR
+
+
 export default function Cards(props){
 
 
@@ -13,12 +17,11 @@ export default function Cards(props){
             <h2>{props.title}</h2>
             <p>{props.detail}</p>
             <h4>{props.precio} </h4>
+            <Link to={`/category/${props.category}/${props.id}`}>
+            <Button>{props.title} </Button>
+            </Link>
+            
         </div>
-        <Link to={`/${props.id} `}>
-            <Button>
-            {`Compra ${props.title}`}
-            </Button>
-        </Link>
     </div>
     )
 
