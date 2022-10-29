@@ -10,7 +10,6 @@ import { getunitem } from "./items";
 export default function ItemsListConten(props){
 const [objeto , setObjeto] = useState ([])
 const {id} = useParams()
-console.log(id)
 // const params = useParams()
 // console.log(params)
 // const categoryId = params.categoryId
@@ -19,27 +18,19 @@ console.log(id)
     () => {
       getunitem(id)
       .then((objeto) => {
-        console.log(objeto)
         setObjeto(objeto)
 })
     },[id]
   );
-setTimeout(() => { 
-  console.log(objeto)},2000)
-
     return(
         <>
         <div>
           <FlexWrapper>
-            <div>
-            {/* {objeto.map((items) =>
-              {return (*/}
-          
+            <div className="orden">
+
                   <ItemsDetails 
                   objeto={objeto}
                   />
-              {/* )}
-            )} */}
             </div>
           </FlexWrapper>
         </div>

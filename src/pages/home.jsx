@@ -3,10 +3,7 @@ import Itemlist from '../componentes/Itemlistcontainer/itemlist';
 export default function Home(){
     return (
         <div>
-            <h1>Home </h1>
-        <ul className='itemsul'>
             <Itemlist  />
-            </ul>
         </div> 
     )
 }

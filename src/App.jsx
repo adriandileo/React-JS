@@ -6,6 +6,7 @@ import Home from "./pages/home" ;
 import ItemCategory from './pages/itemcategory';
 import ItemsListConten from './componentes/Itemlistcontainer/ItemListContainer';
 import {ContextoProvider} from './componentes/Itemsdetails/Cartfunction';
+import { CartView } from './componentes/Cartwidget';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
               
               <Route path = "/" element={<Home/>} />
               <Route path='/category/:category' element={<ItemCategory/>} />
-              <Route path = "/Cartwidget" />
+              <Route path = "/Cartwidget" element={<CartView/>} />
               <Route path ={`/category/:category/:id`} element={<ItemsListConten/>} />
 
             </ Routes>

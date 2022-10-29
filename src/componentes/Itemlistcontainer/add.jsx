@@ -17,12 +17,11 @@ export default function Add({stock,initial,evtAñadir}){
         
         <div>
             <div>
-                <h4>  </h4>
                 <BotonC onClick={restar}> - </BotonC>
-                <strong>{count} </strong>
+                <strong className="count">{count} </strong>
                 <BotonC onClick={sumar}> + </BotonC>
             </div>
-                <button onClick={()=>{ evtAñadir(count)}}>Sumar al Cartwidget</button>
+                <button className="botonAdd" onClick={()=>{ evtAñadir(count)}}>Sumar al Carrito</button>
 
         </div>
     )

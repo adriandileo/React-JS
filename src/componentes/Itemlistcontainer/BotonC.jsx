@@ -6,7 +6,7 @@ export default function BotonC(props){
         if (props.onClick) props.onClick();
       }
       return (
-        <button onClick={handleClick}>
+        <button className="botonClick" onClick={handleClick}>
           {props.children}
         </button>
       )

@@ -4,7 +4,6 @@ const contexto=createContext();
 
 function ContextoProvider(props){
     const[carrito,setCarrito]=useState([])
-  console.log(carrito)
     function añadir(item,count){
         let newCarrito=[...carrito];
         let newItem={...item,count}
@@ -20,16 +19,22 @@ function ContextoProvider(props){
 
     function total(){
         let total = 0
-        carrito.forEach((itemInCart)=>{
+        carrito.forEach((itemInCart) => {
             total=total+ itemInCart.count
         })
         return total
+    }
+    function totalPrice(){
+      let totalPrice=0
+      carrito.forEach((itemInCart) =>{
+          totalPrice=totalPrice+(itemInCart.count*itemInCart.price)
+      })
     }
 
     return (
         <>
           <contexto.Provider
-            value={{ carrito, añadir, total, borrar }}
+            value={{ carrito, totalPrice,  añadir, total, borrar }}
           >
             {props.children}
           </contexto.Provider>

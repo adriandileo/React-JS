@@ -14,34 +14,33 @@ export function ItemsDetails( {objeto}){
 function Onañadir(count){
      añadir(objeto,count)
      setCount(count)
-    console.log("siiii",count)
 }
 
 
 if(objeto.id)
     return(
 
-                <div>
+                <div className="cardDetails">
                     <h1>{objeto.name} </h1>
                     <p>{objeto.details} </p>
                     <h4>${objeto.precio} </h4>
                     
                     {count===0 ? (
                         <Add 
-                         evtAñadir={Onañadir}
+                        evtAñadir={Onañadir}
                         title={objeto.name} 
                         stock={objeto.stock} 
                         initial={1}/>
                         ) : (
-                            <Link to={"/Cartwitget"}> <button>Ver Carrito</button> </Link>
+                            <Link to={"/Cartwidget"}> <button className="botonView">Ver Carrito</button> </Link>
                         )
                         }
-                    <button onClick={()=> borrar(objeto.id)}>Eliminar</button>
+                    <button className="botonDelete" onClick={()=> borrar(objeto.id)}>Eliminar</button>
                     
                 </div>
 
     );
     return(
-        <h2>Cargando</h2>
+        <h2>Cargando...</h2>
     )
 }

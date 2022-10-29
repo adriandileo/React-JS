@@ -12,7 +12,6 @@ export default function Itemlist(){
       () => {
         getitems()
         .then((items) => {
-        console.log(items)
         setItems(items)
 })
 },[]);
@@ -20,12 +19,12 @@ export default function Itemlist(){
     
     return(
     <> 
-    <div>
+    <div >
             <FlexWrapper>
                 {items.map((items)=> {
                   
                     return(
-                <div key={items.id}>
+                <div className="orden" key={items.id}>
                 <Cards id={items.id} category={items.category} title={items.name} details ={items.details} precio={items.precio}  />
                 </div>
                     )})}

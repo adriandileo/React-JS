@@ -3,7 +3,7 @@ import React from "react";
 function FlexWrapper ( props){
     return(
         
-        <div>
+        <div className="items" >
             {props.children}
         </div>
     )

@@ -1,8 +1,10 @@
 .navBar {
     display: flex;
     position: relative;
+    background-color: wheat;
 }
 .bar {
+    
     display: inline-block ;
     margin-inline: 40px;
     text-align: center;
@@ -14,13 +16,58 @@
     color: black;
     font-weight: 500;
     
-}
-.itemsul{
-    display: flex;
-    position: relative;
     
 }
-.producto{
-    padding: 20px;
+
+.items{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: 350px;
+    
+    grid-template-areas: "card" "card";
+    
+}
+.orden{
+    grid-area: card;
+    grid-column: auto;
+    grid-row: auto;
+}
+.card{
+    text-align: center;
     border: solid black 2px;
+    margin: 30px;
+}
+
+
+.cardDetails{
+    margin-top : 20px ;
+    text-align: center;
+
+}
+
+.botonClick, .botonAdd{
+    margin: 20px;
+    font-size: medium;
+}
+.count{
+
+    font-size: large;
+}
+
+.botonView, .botonDelete{
+    margin: 20px;
+}
+
+.carrito{
+    text-align: center;
+    margin: 20px;
+}
+
+.formulario{
+    text-align: center;
+
+}
+.Input{
+    font-size: large;
 }
