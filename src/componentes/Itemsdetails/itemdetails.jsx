@@ -1,21 +1,47 @@
-import FlexWrapper from "../../flexwrapper/flexwrapper";
-import Button from "./button";
-// import { useParams } from "react-router-dom";
+import { useState } from "react";
+import Add from "../Itemlistcontainer/add";
+import { useContext } from "react";
+import { contexto } from "./Cartfunction";
+import { Link } from "react-router-dom";
                     //      CONTENEDOR
 
+export function ItemsDetails( {objeto}){
 
-export function ItemsDetails(props){
-// console.log(useParams())
+ const [count,setCount]=useState(0)
+
+ const {añadir,borrar}=useContext(contexto)
+
+function Onañadir(count){
+     añadir(objeto,count)
+     setCount(count)
+    console.log("siiii",count)
+}
+
+
+if(objeto.id)
     return(
-        <div>
-            <FlexWrapper>
+
                 <div>
-                    <h1>{props.title} </h1>
-                    <p>{props.details} </p>
-                    <h4>{props.precio} </h4>
-                    <Button>{props.title} </Button>
+                    <h1>{objeto.name} </h1>
+                    <p>{objeto.details} </p>
+                    <h4>${objeto.precio} </h4>
+                    
+                    {count===0 ? (
+                        <Add 
+                         evtAñadir={Onañadir}
+                        title={objeto.name} 
+                        stock={objeto.stock} 
+                        initial={1}/>
+                        ) : (
+                            <Link to={"/Cartwitget"}> <button>Ver Carrito</button> </Link>
+                        )
+                        }
+                    <button onClick={()=> borrar(objeto.id)}>Eliminar</button>
+                    
                 </div>
-            </FlexWrapper>
-        </div>
+
+    );
+    return(
+        <h2>Cargando</h2>
     )
 }

@@ -5,6 +5,8 @@ import { ItemsDetails } from "../Itemsdetails/itemdetails";
 import FlexWrapper from "../../flexwrapper/flexwrapper";
 import { getunitem } from "./items";
 
+//                                  Un solo Item
+
 export default function ItemsListConten(props){
 const [objeto , setObjeto] = useState ([])
 const {id} = useParams()
@@ -34,11 +36,7 @@ setTimeout(() => {
               {return (*/}
           
                   <ItemsDetails 
-                  id={objeto.id} 
-                  category={objeto.category} 
-                  title={objeto.name} 
-                  details={objeto.details} 
-                  precio={objeto.precio}  
+                  objeto={objeto}
                   />
               {/* )}
             )} */}

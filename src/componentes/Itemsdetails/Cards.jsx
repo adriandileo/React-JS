@@ -15,10 +15,10 @@ export default function Cards(props){
         </div>
         <div className="detalles">
             <h2>{props.title}</h2>
-            <p>{props.detail}</p>
+            <p>{props.details}</p>
             <h4>{props.precio} </h4>
             <Link to={`/category/${props.category}/${props.id}`}>
-            <Button>{props.title} </Button>
+            <Button title={props.title} />
             </Link>
             
         </div>

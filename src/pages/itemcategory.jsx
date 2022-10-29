@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 // import { Link } from "react-router-dom"
-import { ItemsDetails } from "../componentes/Itemsdetails/itemdetails"
+// import { ItemsDetails } from "../componentes/Itemsdetails/itemdetails"
 import { getCategory } from "../componentes/Itemlistcontainer/items"
 import FlexWrapper from "../flexwrapper/flexwrapper"
+import Cards from "../componentes/Itemsdetails/Cards" 
 
+//                          Items y Categorias
 
 export default function ItemCategory(props){
 console.log(useParams())
@@ -31,14 +33,22 @@ setTimeout(() => {
                 <FlexWrapper>
                     {categoria.map((categoria)=>{
                     return(
-                        <ItemsDetails 
-                            key={categoria.id}
-                            id={categoria.id} 
-                            category={categoria.category} 
-                            title={categoria.name} 
-                            details={categoria.details} 
-                            precio={categoria.precio}  
-                            />
+                        // <ItemsDetails 
+                        //     key={categoria.id}
+                        //     id={categoria.id} 
+                        //     category={categoria.category} 
+                        //     title={categoria.name} 
+                        //     details={categoria.details} 
+                        //     precio={categoria.precio}  
+                        //     />
+                        <Cards
+                        key={categoria.id}
+                                id={categoria.id} 
+                                category={categoria.category} 
+                                title={categoria.name} 
+                                details={categoria.details} 
+                                precio={categoria.precio}  
+                        />
                     )} )}
                 
                 </FlexWrapper>

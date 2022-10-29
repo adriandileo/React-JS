@@ -26,7 +26,7 @@ export default function Itemlist(){
                   
                     return(
                 <div key={items.id}>
-                <Cards id={items.id} category={items.category} title={items.name} detail ={items.details} precio={items.precio}  />
+                <Cards id={items.id} category={items.category} title={items.name} details ={items.details} precio={items.precio}  />
                 </div>
                     )})}
             </FlexWrapper> 
