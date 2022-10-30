@@ -2,19 +2,18 @@ import Input from "./input";
 // import { useNavigate } from "react-router-dom";
 import React, {useState} from "react";
 
-
 export default function Formulario({carrito,totalPrice}){
-    const [ticket,setTicket]=useState({
-        userData:"",
-        carrito:"",
-        total:"",
-        dia:""
-    })
-    const [userData,setUserData]= useState({
+
+
+    const [Ticket,setTicket]=useState([])
+    const [userData,setUserData]= useState(
+        //[]
+        {
         name:"",
         email:"",
         phone:"",
-    })
+    }
+    )
     function ChangeUser(evento){
         const name =evento.target.name
         const value=evento.target.value
@@ -22,23 +21,19 @@ export default function Formulario({carrito,totalPrice}){
         newUserData[name]=value
         setUserData(newUserData)
     }
-    function onSumbit(evento,ticket){
-     evento.preventDefault();
-    let Compra={
-        comprador:userData,
-        caarrito:carrito,
-        total:totalPrice(),
-        date:new Date(),
+    function onSumbit(){
+        let data={
+            comprador:userData,
+            carrito:carrito
+        }
+        let newTicket=[...Ticket];
+        let newItem={...data}
+        newTicket.push(newItem)
+        setTicket(newTicket)
     }
-    let newTicket=[...ticket]
-    let newCompra={...Compra}
-    newTicket.push(newCompra)
-    setTicket(newTicket)
-    }
+    return(
 
-return(
-
-    <form className="formulario"  >
+    <div className="formulario"  >
         <Input
         value={userData.name}
         title="Nombre"
@@ -61,8 +56,17 @@ return(
         onChange={ChangeUser}
         ></Input>
 
-    <button type="sumbit" onClick={()=> onSumbit()} >Comprar!!!!</button>
-    </form>
+    <button onClick={()=> onSumbit()} >Comprar!!!!</button>
+    {Ticket.length>0 ?
+    (
+        console.log(Ticket),
+        <h2>Ticket en Consola </h2>
+    ):(
+        <h2>Esperando Datos</h2>
+    )
+
+    }
+    </div>
 
 )
 

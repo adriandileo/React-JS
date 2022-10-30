@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { contexto } from "./Itemsdetails/Cartfunction";
 import Formulario from "../flexwrapper/Formulario";
 import FlexWrapper from "../flexwrapper/flexwrapper";
+// import React, {useState} from "react";
 
 function CartWidget(){
 const {total}=useContext(contexto)
@@ -40,4 +41,21 @@ return(
 )
 }
 
-export {CartView,CartWidget}
+
+
+function Ticket(props, {Ticket}){
+
+return(
+    <div>
+        <h1>
+          Gracias Por Su Compra  
+        </h1>
+        <h2>{props.comprador}</h2>
+        <p>{props.carrito}</p>
+
+
+    </div>
+)    
+}
+
+export {CartView,CartWidget,Ticket}
