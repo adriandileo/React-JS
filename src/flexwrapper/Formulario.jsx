@@ -7,12 +7,11 @@ export default function Formulario({carrito,totalPrice}){
 
     const [Ticket,setTicket]=useState([])
     const [userData,setUserData]= useState(
-        //[]
-        {
-        name:"",
-        email:"",
-        phone:"",
-    }
+         {
+         name:"",
+         email:"",
+         phone:"",
+     }
     )
     function ChangeUser(evento){
         const name =evento.target.name
@@ -22,18 +21,52 @@ export default function Formulario({carrito,totalPrice}){
         setUserData(newUserData)
     }
     function onSumbit(){
-        let data={
-            comprador:userData,
-            carrito:carrito
-        }
+        // let data={
+        //     comprador:userData,
+        //     carrito:carrito
+        // }
         let newTicket=[...Ticket];
-        let newItem={...data}
+        let newItem={...userData,...carrito}
         newTicket.push(newItem)
         setTicket(newTicket)
     }
     return(
 
     <div className="formulario"  >
+    {Ticket.length>0 ?
+    (
+        <div key={userData.name}>
+            <h2>Gracias por tu compra</h2>
+            <h4>{userData.name} </h4>
+            <p>{userData.email} </p>
+            <p>{userData.phone} </p>
+            {
+                carrito.map((carrito)=>{
+                    return(
+                        <div>
+                        <p>{carrito.name} </p>                        
+                        </div>
+                       
+                    )
+                })
+            }
+            {/* {
+                carrito.reduce((carrito) => {
+                    return(
+                        <p>
+                            Precio Total $
+                            {carrito.precio*carrito.count}
+                        </p>
+                       
+                    )
+                    
+                })} */}
+        </div>
+        
+    ):(
+        
+        <div>
+            
         <Input
         value={userData.name}
         title="Nombre"
@@ -57,12 +90,10 @@ export default function Formulario({carrito,totalPrice}){
         ></Input>
 
     <button onClick={()=> onSumbit()} >Comprar!!!!</button>
-    {Ticket.length>0 ?
-    (
-        console.log(Ticket),
-        <h2>Ticket en Consola </h2>
-    ):(
-        <h2>Esperando Datos</h2>
+        
+    <h2>Esperando Datos</h2>
+        </div>
+        // <h2>Esperando Datos</h2>
     )
 
     }
