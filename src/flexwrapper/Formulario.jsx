@@ -50,17 +50,6 @@ export default function Formulario({carrito,totalPrice}){
                     )
                 })
             }
-            {/* {
-                carrito.reduce((carrito) => {
-                    return(
-                        <p>
-                            Precio Total $
-                            {carrito.precio*carrito.count}
-                        </p>
-                       
-                    )
-                    
-                })} */}
         </div>
         
     ):(
