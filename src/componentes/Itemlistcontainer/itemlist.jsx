@@ -2,9 +2,6 @@ import Cards from "../Itemsdetails/Cards";
 import FlexWrapper from "../../flexwrapper/flexwrapper";
 import React , {useState, useEffect} from "react";
 import {getitems} from "./items";
-// import Button from "../Itemsdetails/button";
-// import { Link } from "react-router-dom";
-//          TODO
 
 export default function Itemlist(){
     const [items , setItems] = useState ([])

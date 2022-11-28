@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { contexto } from "./Itemsdetails/Cartfunction";
 import Formulario from "../flexwrapper/Formulario";
 import FlexWrapper from "../flexwrapper/flexwrapper";
-// import React, {useState} from "react";
 
 function CartWidget(){
 const {total}=useContext(contexto)

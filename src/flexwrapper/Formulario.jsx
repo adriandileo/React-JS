@@ -1,5 +1,4 @@
 import Input from "./input";
-// import { useNavigate } from "react-router-dom";
 import React, {useState} from "react";
 
 export default function Formulario({carrito,totalPrice}){
@@ -21,10 +20,7 @@ export default function Formulario({carrito,totalPrice}){
         setUserData(newUserData)
     }
     function onSumbit(){
-        // let data={
-        //     comprador:userData,
-        //     carrito:carrito
-        // }
+
         let newTicket=[...Ticket];
         let newItem={...userData,...carrito}
         newTicket.push(newItem)
@@ -82,7 +78,6 @@ export default function Formulario({carrito,totalPrice}){
         
     <h2>Esperando Datos</h2>
         </div>
-        // <h2>Esperando Datos</h2>
     )
 
     }

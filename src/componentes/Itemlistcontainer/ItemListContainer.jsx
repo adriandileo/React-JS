@@ -10,10 +10,7 @@ import { getunitem } from "./items";
 export default function ItemsListConten(props){
 const [objeto , setObjeto] = useState ([])
 const {id} = useParams()
-// const params = useParams()
-// console.log(params)
-// const categoryId = params.categoryId
-// console.log(categoryId)
+
   useEffect(
     () => {
       getunitem(id)

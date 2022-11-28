@@ -3,7 +3,6 @@ import BotonC from "./BotonC";
 
 export default function Add({stock,initial,evtAñadir}){
     const [count, setCount]= useState(initial);
-    // console.log(initial)
     function restar(){
         if (count > 1) setCount(count -1)
     }
