@@ -1,5 +1,93 @@
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDocs,
+  getDoc,
+  query,
+  where,
+  addDoc,
+  writeBatch
+} from "firebase/firestore";
 
-    const items = [
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyACi6ag1uMNeoXydQdkd5F2oDANJ5ZLs8Y",
+  authDomain: "rutajardin-74c36.firebaseapp.com",
+  projectId: "rutajardin-74c36",
+  storageBucket: "rutajardin-74c36.appspot.com",
+  messagingSenderId: "309016876988",
+  appId: "1:309016876988:web:5f48aa640c5d4936a53db9"
+};
+
+const FirebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(FirebaseApp)
+
+
+async function getitems(){
+  const collectionRef = collection(db, "items");
+
+  let results = await getDocs(collectionRef);
+  let dataItems = results.docs.map((doc) => {
+    return {
+      id: doc.id,
+     ...doc.data(),
+    };
+  });
+
+  return dataItems;
+}
+;
+ async function getunitem(idParams){
+    const docRef = doc(db, "items", idParams);
+    const docResult = await getDoc(docRef);
+    if (docResult.exists()) {
+    return { id: docResult.id, ...docResult.data() };
+   }
+
+ }
+
+ async function getCategory(CategoryParams){
+  const collectionRef = collection(db, "items");
+
+  const queryCat = query(
+    collectionRef,
+    where("category", "==", CategoryParams)
+  );
+
+  let results = await getDocs(queryCat);
+
+  let dataItems = results.docs.map((doc) => {
+    return {
+      id: doc.id,
+      ...doc.data(),
+    };
+  });
+
+  return dataItems;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function sendData(){
+
+
+const items = [
         {
             "id": 1,
             "name": "Drupa",
@@ -56,35 +144,20 @@
           }
 ];
 
+let itemsCollectionRef = collection(db, "items")
 
-function getitems(){
-    return new Promise ((resolve) => {
-        setTimeout(() =>
-        resolve(items),1000)
-    })
-}
-;
-function getunitem(idParams){
-    return new Promise ((resolve) =>{
-        let itemRequerido = items.find((item) => {
-           return( item.id === +idParams)
-        })
-
-        setTimeout(() =>
-        resolve(itemRequerido),1000)
-    } )
+for(let item of items){
+  delete(item.id)
+  let newDoc = await addDoc(itemsCollectionRef, item);
+  console.log("Documento creado:",newDoc.id)
 }
 
-function getCategory(CategoryParams){
-    return new Promise ((resolve) =>{
-        let itemRequerido = items.filter((item) => {
-           return( item.category === CategoryParams)
-        })
-
-        setTimeout(() =>
-        resolve(itemRequerido),1000)
-    } )
-}
+};
 
 
-export {getitems,getunitem, getCategory} 
+
+
+export {getitems,
+  getunitem, 
+  getCategory, 
+  FirebaseApp} 

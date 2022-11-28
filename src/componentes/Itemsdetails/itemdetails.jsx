@@ -17,7 +17,7 @@ function Onañadir(count){
 }
 
 
-if(objeto.id)
+// if(objeto.id)
     return(
 
                 <div className="cardDetails">
@@ -39,8 +39,9 @@ if(objeto.id)
                     
                 </div>
 
-    );
-    return(
-        <h2>Cargando...</h2>
-    )
+     )
+    // ;
+    // return(
+    //     <h2>Cargando...</h2>
+    // )
 }

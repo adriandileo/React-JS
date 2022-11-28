@@ -8,6 +8,9 @@ import ItemsListConten from './componentes/Itemlistcontainer/ItemListContainer';
 import {ContextoProvider} from './componentes/Itemsdetails/Cartfunction';
 import { CartView } from './componentes/Cartwidget';
 import {Ticket} from './componentes/Cartwidget'
+
+
+
 function App() {
 
   return (
