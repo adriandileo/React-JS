@@ -7,7 +7,6 @@ import ItemCategory from './pages/itemcategory';
 import ItemsListConten from './componentes/Itemlistcontainer/ItemListContainer';
 import {ContextoProvider} from './componentes/Itemsdetails/Cartfunction';
 import { CartView } from './componentes/Cartwidget';
-import {Ticket} from './componentes/Cartwidget'
 
 
 
@@ -25,7 +24,6 @@ function App() {
               <Route path='/category/:category' element={<ItemCategory/>} />
               <Route path = "/Cartwidget" element={<CartView/>} />
               <Route path ={`/category/:category/:id`} element={<ItemsListConten/>} />
-              <Route path={'/Ticket'} element={<Ticket/>} />
             </ Routes>
           </BrowserRouter>
           </ContextoProvider>

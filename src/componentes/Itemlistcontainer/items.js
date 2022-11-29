@@ -7,8 +7,7 @@ import {
   getDoc,
   query,
   where,
-  addDoc,
-  writeBatch
+  addDoc
 } from "firebase/firestore";
 
 
@@ -70,19 +69,11 @@ async function getitems(){
   return dataItems;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+async function createBuyOrder(orderData){
+  const collectionRef = collection(db, "orders");
+  let respuesta = await addDoc(collectionRef, orderData)
+  return respuesta.id;
+}
 
 async function sendData(){
 
@@ -159,5 +150,6 @@ for(let item of items){
 
 export {getitems,
   getunitem, 
-  getCategory, 
+  getCategory,
+  createBuyOrder, 
   FirebaseApp} 

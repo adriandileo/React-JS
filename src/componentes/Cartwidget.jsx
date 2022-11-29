@@ -40,21 +40,4 @@ return(
 )
 }
 
-
-
-function Ticket(props, {Ticket}){
-
-return(
-    <div>
-        <h1>
-          Gracias Por Su Compra  
-        </h1>
-        <h2>{props.comprador}</h2>
-        <p>{props.carrito}</p>
-
-
-    </div>
-)    
-}
-
-export {CartView,CartWidget,Ticket}
+export {CartView,CartWidget}
